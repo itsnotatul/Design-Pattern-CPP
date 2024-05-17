@@ -1,4 +1,4 @@
-#include "../include/SquirellHandler.h"
+#include "SquirellHandler.h"
 
 
 SquirellHandler::SquirellHandler(/* args */)
@@ -13,8 +13,9 @@ SquirellHandler::~SquirellHandler()
 
 string SquirellHandler::handle(string str)
 {
-    if(str == "nuts"){
-        return "I'll eat the " + str+ " .\n";
+    if(str == "nut"){
+        string ret = "Squirrel: I'll eat the " + str;
+        return ret;
     }
     else return AbstractHandler::handle(str);
 }

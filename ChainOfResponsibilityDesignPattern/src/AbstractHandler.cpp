@@ -1,4 +1,4 @@
-#include "../include/AbstractHandler.h"
+#include "AbstractHandler.h"
 
 AbstractHandler::AbstractHandler(/* args */)
 {
@@ -20,7 +20,8 @@ Handler* AbstractHandler::setNext(Handler* handler)
 string AbstractHandler::handle(string str) {
     if(next_handler != nullptr)
     {
-        next_handler->handle(str);
+        cout<<"sending request to next handler"<<endl;
+        return next_handler->handle(str);
     }
     else
     {

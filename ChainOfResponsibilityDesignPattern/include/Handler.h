@@ -7,4 +7,5 @@ class Handler{
 public:
     virtual Handler* setNext(Handler* handler) = 0;
     virtual string handle(string str) = 0;
+    virtual ~Handler(){}
 };

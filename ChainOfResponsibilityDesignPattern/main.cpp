@@ -1,7 +1,7 @@
 #include<iostream>
-#include "include/DogHandler.h"
-#include "include/SquirellHandler.h"
-#include "include/MonkeyHandler.h"
+#include "DogHandler.h"
+#include "SquirellHandler.h"
+#include "MonkeyHandler.h"
 
 using namespace std;
 

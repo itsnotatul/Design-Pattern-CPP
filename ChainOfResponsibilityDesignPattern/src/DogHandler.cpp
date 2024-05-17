@@ -1,4 +1,4 @@
-#include "../include/DogHandler.h"
+#include "DogHandler.h"
 
 
 DogHandler::DogHandler(/* args */)
@@ -14,7 +14,7 @@ DogHandler::~DogHandler()
 string DogHandler::handle(string str)
 {
     if(str == "bone"){
-        return "I'll eat the " + str+ " .\n";
+        return "Dog: I'll eat the " + str + ".\n";
     }
     else return AbstractHandler::handle(str);
 }

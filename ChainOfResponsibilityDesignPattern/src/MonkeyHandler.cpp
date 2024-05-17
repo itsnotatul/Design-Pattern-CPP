@@ -1,4 +1,4 @@
-#include "../include/MonkeyHandler.h"
+#include "MonkeyHandler.h"
 
 
 MonkeyHandler::MonkeyHandler(/* args */)
@@ -14,7 +14,7 @@ MonkeyHandler::~MonkeyHandler()
 string MonkeyHandler::handle(string str)
 {
     if(str == "banana"){
-        return "I'll eat the " + str+ " .\n";
+        return "Monkey: I'll eat the " + str + ".\n";
     }
     else return AbstractHandler::handle(str);
 }
