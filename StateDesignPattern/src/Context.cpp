@@ -1,30 +1,31 @@
-#include "../include/Context.h"
+#include "Context.h"
 
-
-
-Context::Context():_state(std::make_unique<ConcreteStateA>()){
-        cout<<"Context Object Created"<<endl;
+Context::Context():_state(nullptr){ 
+    cout<<"Context Object Created"<<endl;
+    setState(new ConcreteStateA()); // ###### default state ######
 }
 
 Context::~Context()
 {
     cout<<"Context Object DESTROYED"<<endl;
+    delete _state;
 }
 
-void Context::setState(std::unique_ptr<State> _state){
-        this->_state = std::move(_state);
-    }
-
-void Context::stateA_request(){
-    setState(make_unique<ConcreteStateA>());
+void Context::setState(State* state)
+{
+    cout<<"Setting state"<<endl;
+    if(_state !=nullptr) delete _state;
+    _state = state;
+    _state->setContext(this);
 }
 
-void Context::stateB_request(){
-    setState(make_unique<ConcreteStateB>());
+void Context::Request1()
+{
+    _state->handleRequest1();
 }
 
-void Context::handleRequest(){
-    _state->handleRequest(*this);
-    x++;
+void Context::Request2()
+{
+    _state->handleRequest2();
 }
 

@@ -5,5 +5,6 @@ class ConcreteStateB : public State{
 public:
     ConcreteStateB();
     ~ConcreteStateB();
-    void handleRequest(Context& context)override;
+    void handleRequest1()override;
+    void handleRequest2() override;
 };
